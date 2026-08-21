@@ -1,0 +1,54 @@
+- name: Configure SW1
+  hosts: SW1
+  gather_facts: false
+
+  tasks:
+
+    - name: Create VLANs
+      cisco.ios.ios_vlans:
+        config:
+          - { vlan_id: 10, name: VLAN10 }
+          - { vlan_id: 11, name: VLAN11 }
+          - { vlan_id: 12, name: VLAN12 }
+          - { vlan_id: 13, name: VLAN13 }
+          - { vlan_id: 14, name: VLAN14 }
+          - { vlan_id: 15, name: VLAN15 }
+          - { vlan_id: 16, name: VLAN16 }
+          - { vlan_id: 17, name: VLAN17 }
+          - { vlan_id: 18, name: VLAN18 }
+          - { vlan_id: 19, name: VLAN19 }
+          - { vlan_id: 20, name: VLAN20 }
+          - { vlan_id: 40, name: VLAN40 }
+        state: merged
+
+    - name: Configure trunk interfaces
+      cisco.ios.ios_l2_interfaces:
+        config:
+          - name: Ethernet0/1
+            mode: trunk
+            trunk:
+              allowed_vlans: 10-20,40
+              native_vlan: 1
+              pruning_vlans: 11,12
+              encapsulation: dot1q
+
+          - name: Ethernet0/2
+            mode: trunk
+            trunk:
+              allowed_vlans: 10-20,40
+              native_vlan: 1
+              pruning_vlans: 11,12
+              encapsulation: dot1q
+
+        state: deleted
+
+    - name: Execute show vlan brief
+      cisco.ios.ios_command:
+        commands:
+
+        - show vlan brief
+        - wr
+      register: show_output
+    - name: Print show vlan brief output
+      ansible.builtin.debug:
+        var: show_output.stdout_lines

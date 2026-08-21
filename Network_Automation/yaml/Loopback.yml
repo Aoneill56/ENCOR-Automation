@@ -1,0 +1,23 @@
+---
+- name: Enable Loopbacks on routers
+  hosts: R1, R2
+  gather_facts: false
+  tasks:
+    - name: Configure Loopback1 on r1
+      when: inventory_hostname == 'R1'
+      cisco.ios.ios_command:
+        commands:
+          - "conf t"
+          - "int lo2"
+          - "ip address 2.2.2.2 255.255.255.0"
+          - "no shutdown"
+          - "end"
+    - name: Configure Loopback2 on r2
+      when: inventory_hostname == 'R2'
+      cisco.ios.ios_command:
+        commands:
+          - "conf t"
+          - "int lo1"
+          - "ip address 1.1.1.1 255.255.255.0"
+          - "no shutdown"
+          - "end"
