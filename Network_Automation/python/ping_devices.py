@@ -14,7 +14,7 @@ for ip in ips:
         "device_type": "cisco_ios",
         "host": ip,
         "username": "admin",
-        "password": "YOUR_PASSWORD"
+        "password": "ENTER A PASSWORD"
     }
 
     connection = ConnectHandler(**device)
