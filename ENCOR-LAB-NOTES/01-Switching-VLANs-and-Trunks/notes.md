@@ -8,6 +8,8 @@ vlan 10
  name USERS
 vlan 20
  name SERVERS
+vlan 30
+ name VOICE
 vlan 40
  name MANAGEMENT
 end
@@ -34,7 +36,7 @@ interface Ethernet0/10
 
 ```cisco
 interface Ethernet0/10
- switchport voice vlan 20
+ switchport voice vlan 30
  no shutdown
 ```
 
