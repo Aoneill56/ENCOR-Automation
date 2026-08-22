@@ -1,7 +1,5 @@
 # ENCOR Lab Notes — Topic Index
 
-Each topic is deliberately kept in its own folder so individual subjects can be added, expanded and linked from GitHub independently.
-
 ## Switching
 - [VLANs and Trunks](01-Switching-VLANs-and-Trunks/notes.md)
 - [SVI / Inter-VLAN Routing](09-SVI-InterVLAN-Routing/notes.md)
@@ -23,4 +21,3 @@ Each topic is deliberately kept in its own folder so individual subjects can be 
 ## Troubleshooting
 - [Switching Troubleshooting](11-Switching-Troubleshooting/notes.md)
 
-Legacy 802.1D STP is intentionally excluded.
