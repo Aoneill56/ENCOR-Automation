@@ -1,6 +1,6 @@
-# ENCOR Automation — Study Notes
+# ENCOR  — Study Notes
 
-Cisco ENCOR-focused switching and automation notes.
+Cisco ENCOR-focused switching notes.
 
 Focus: RSTP (802.1w), Rapid PVST+, MST (802.1s), STP protection, VLANs, trunks, EtherChannel and troubleshooting.
 
