@@ -34,7 +34,7 @@ interface Ethernet0/10
 
 ```cisco
 interface Ethernet0/10
-
+switchport voice vlan 20
  no shutdown
 ```
 
