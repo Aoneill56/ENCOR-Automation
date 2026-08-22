@@ -30,6 +30,14 @@ interface Ethernet0/10
  no shutdown
 ```
 
+## Voice Vlan
+
+```cisco
+interface Ethernet0/10
+
+ no shutdown
+```
+
 Verify:
 
 ```cisco
